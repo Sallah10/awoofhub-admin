@@ -8,6 +8,13 @@ export async function getUserByIdService(id: string): Promise<ApiResponse<User>>
   return res;
 }
 
+
+export async function getAllUsersService(): Promise<ApiResponse<User[]>> {
+  const res: ApiResponse<User[]> = await apiClient.get('/users')
+
+  return res;
+}
+
 export async function getUserService(): Promise<ApiResponse<User>> {
   const res: ApiResponse<User> = await apiClient.get('/users/me')
   
